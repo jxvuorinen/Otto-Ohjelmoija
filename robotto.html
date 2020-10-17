@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fi">
+<title>Robotto - Otto-Ohjelmoija</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/images/Logo.png" type="image/gif">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: "Lato", sans-serif;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    body,
+    html {
+        height: 100%;
+        color: rgb(89, 89, 89);
+        line-height: 1.8;
+    }
+
+    .w3-wide {
+        letter-spacing: 10px;
+    }
+
+    .w3-hover-opacity {
+        cursor: pointer;
+    }
+
+    .w3-button:focus,
+    .w3-button:hover {
+        color: white;
+        background-color: black;
+        text-decoration: none
+    }
+</style>
+
+<body>
+    <nav>
+        <!-- Navbar (sit on top) -->
+        <div class="w3-top">
+            <div class="w3-bar" id="myNavbar">
+                <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right"
+                    href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+                    <i class="fa fa-bars"></i>
+                </a>
+                <a href="index.html#portfolio" class="w3-bar-item w3-button">TAKAISIN</a>
+            </div>
+
+            <!-- Navbar on small screens -->
+            <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+                <a href="index.html" class="w3-bar-item w3-button" onclick="toggleFunction()">ETUSIVULLE</a>
+                <a href="index.html#about" class="w3-bar-item w3-button" onclick="toggleFunction()">TIETOA</a>
+                <a href="index.html#portfolio" class="w3-bar-item w3-button" onclick="toggleFunction()">PROJEKTIT</a>
+                <a href="index.html#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">YHTEYS</a>
+            </div>
+        </div>
+    </nav>
+    <main>
+
+        <!-- Container (Ohjelmointiosio) -->
+        <div class="w3-content w3-container w3-padding-64" id="ohjelmointi">
+            <h1 class="w3-center">KOKEILE OHJELMOINTIA</h1>
+            <p class="w3-center"><em>Tässä pääset kokeilemaan ohjelmointia Robotto-robotin kanssa</em></p>
+
+            <h2 class="w3-center">Miten saat robotin heiluttamaan käsiään?</h2>
+            <p class="w3-center">Vinkki: Mitä on &quot;robotto.heiluttaa();&quot; englanniksi?</p>
+
+            <div class="w3-row w3-padding-32 w3-section">
+                <p id="animaatio" class="w3-col m4 w3-container">
+                    <img id="perus" src="/images/perus.png" style="width:100%" alt="robotin kädet alhaalla"></p>
+                <div class="w3-col m8 w3-panel">
+                    <div class="w3-large w3-margin-bottom">
+                        <form name="komentorivi" id="komentoform">
+                            <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+                                <div class="w3-half">
+                                    <label for="komento">Kirjoita komento:</label>
+                                    <input class="w3-input w3-border" type="text" placeholder="komento();" id="komento"
+                                        name="Komento">
+                                    <p id="teksti"></p>
+                                    <input class="w3-button w3-black w3-center w3-section" style="width: 127px"
+                                        type="button" onclick="kasittele()" value="SUORITA">
+                                    <input class="w3-button w3-black w3-center w3-section" type="button"
+                                        onclick="tyhjenna()" value="TYHJENNÄ">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
+        <p><img src="/images/LogoMusta.png" class="w3-round" width="10%" height="10%" alt="OTTO-OHJELMOIJA"><br />
+            Otto-Ohjelmoija<br />
+            Ohjelmoijanpolkutie 0, 00000 Helsinki<br />
+            GSM: +358 00 00000<br />
+            Email: otto@ohjelmoija.mallimail<br />
+        </p>
+        <div class="w3-xlarge w3-section">
+            <i class="fa fa-facebook-official w3-hover-opacity"></i>
+            <i class="fa fa-instagram w3-hover-opacity"></i>
+            <i class="fa fa-snapchat w3-hover-opacity"></i>
+            <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+            <i class="fa fa-twitter w3-hover-opacity"></i>
+            <i class="fa fa-linkedin w3-hover-opacity"></i>
+        </div>
+    </footer>
+
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+
+    <script>
+        // Change style of navbar on scroll
+        window.onscroll = function () { myFunction() };
+        function myFunction() {
+            var navbar = document.getElementById("myNavbar");
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
+            } else {
+                navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
+            }
+        }
+
+        // Used to toggle the menu on small screens when clicking on the menu button
+        function toggleFunction() {
+            var x = document.getElementById("navDemo");
+            if (x.className.indexOf("w3-show") == -1) {
+                x.className += " w3-show";
+            } else {
+                x.className = x.className.replace(" w3-show", "");
+            }
+        }
+        //Komennon käsittely
+        function kasittele() {
+            var komento = document.forms["komentorivi"]["Komento"].value;
+            if (komento == "robotto.wave();") {
+                document.getElementById("teksti").innerHTML = "Oikein!";
+                document.getElementById("animaatio").innerHTML = "<img class='robo' src='/images/perus.png' width='100%' alt='robotin kädet alhaalla'>"
+                    + "<img class='robo' src='/images/heiluu.png' width='100%' alt='robotin kädet ylhäällä'>";
+                w3.slideshow(".robo", 1000);
+
+            } else {
+                document.getElementById("teksti").innerHTML = "Syntax Error!!!";
+            }
+        }
+
+        //tyhjennä-painike
+        function tyhjenna() {
+            document.getElementById("komentoform").reset();
+            document.getElementById("animaatio").innerHTML = "<img class='robo' src='/images/perus.png' width='100%' alt='robotin kädet alhaalla'>"
+            document.getElementById("teksti").innerHTML = "Yritä uudestaan!"
+        }
+
+    </script>
+
+</body>
+
+</html>

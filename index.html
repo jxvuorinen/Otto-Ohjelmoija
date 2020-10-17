@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="fi">
+<title>Otto-Ohjelmoija</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="Logo.png" type="image/gif">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: "Lato", sans-serif;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    body,
+    html {
+        height: 100%;
+        color: rgb(89, 89, 89);
+        line-height: 1.8;
+    }
+    .bgimg-1,
+    .bgimg-2,
+    .bgimg-3 {
+        min-height: 400px;
+        background-size: cover;
+        background-position: center;
+        }
+
+    /* First image (Logo. Full height) */
+    .bgimg-1 {
+        background-image: url("/images/coffee-1869820_1920.jpg");
+        min-height: 400px;
+    }
+
+    /* Second image (Portfolio) */
+    .bgimg-2 {
+        background-image: url("/images/city-3213676_1280.jpg");
+        min-height: 400px;
+
+    }
+
+    /* Third image (Contact) */
+    .bgimg-3 {
+        background-image: url("/images/phone-690134_640.jpg");
+        min-height: 400px;
+    }
+
+    .w3-wide {
+        letter-spacing: 10px;
+    }
+
+    .w3-hover-opacity {
+        cursor: pointer;
+    }
+
+    .w3-button:focus,
+    .w3-button:hover {
+        color: white;
+        background-color: black;
+        text-decoration: none
+    }
+</style>
+
+<body>
+
+    <!-- Navbar (sit on top) -->
+    <nav>
+        <div class="w3-top">
+            <div class="w3-bar" id="myNavbar">
+                <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right"
+                    href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+                    <i class="fa fa-bars"></i>
+                </a>
+                <a href="#home" class="w3-bar-item w3-button">ETUSIVU</a>
+                <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i>TIETOA</a>
+                <a href="#portfolio" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i>PROJEKTIT</a>
+                <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i>YHTEYS</a>
+            </div>
+
+            <!-- Navbar on small screens -->
+            <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+                <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">TIETOA</a>
+                <a href="#portfolio" class="w3-bar-item w3-button" onclick="toggleFunction()">PROJEKTIT</a>
+                <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">YHTEYS</a>
+            </div>
+        </div>
+    </nav>
+    <header>
+        <!-- First Parallax Image with Logo Text -->
+        <div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
+            <div class="w3-display-middle" style="white-space:nowrap;">
+                <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">
+                    OTTO<span class="w3-hide-small">-ohjelmoija</span>
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Container (About Section) -->
+        <div class="w3-content w3-container w3-padding-64" id="about">
+            <h1 class="w3-center">Otto-ohjelmoija <img src="/images/Logo.png" class="w3-round" alt="OTTO-OHJELMOIJA"
+                    height="15%" width="15%"></h1>
+            <p class="w3-center"><em style="font-size:20px">Osaaminen, Tarpeet, Taiteellisuus, Oppiminen</em></p>
+            <p>Olen Otto Ohjelmoija, freelancer-ohjelmoija. Tuotan tarpeisiisi sopivat web-sivustot, sovellukset sekä
+                tietokoneiden
+                ja ohjelmistojen asennukset luotettavasti ja näyttävästi. Ammattitaitoni perustuu vahvaan 10 vuoden
+                ohjelmointi-kokemukseen. Mottonani on varmistaa, että sisältö todella vastaa asiakkaan tarpeisiin.
+                Vahvuuteni on taiteellinen silmä, jota olen saanut graafikkona toimimisesta. Olen myös nopea
+                oppimaan
+                uutta,
+                joten en pelkää ottaa vastaan projekteja, jotka eivät vielä kuulu osaamisalueeseeni. Olen myös
+                valmis
+                opettamaan asiakkaille projektien ohella ohjelmoinnin perusteita! <br />
+                Sivultani löydät esimerkkejä tuottamistani projekteista ja pääset myös itse harjoittelemaan
+                ohjelmointia!
+                <br />
+                Ota rohkeasti yhteyttä, yhteystiedot löytyvät sivuston alareunasta!
+            </p>
+            <div class="w3-row">
+                <div class="w3-col m6 w3-center w3-padding-large">
+                    <p><strong><i class="fa fa-user w3-margin-right"></i>Otto Ohjelmoija</strong></p><br>
+                    <img src="/images/profile-1726471_1920.jpg" class="w3-round w3-opacity w3-hover-opacity-off w3-image"
+                        alt="Profiilikuvani" width="250" height="330">
+                </div>
+
+                <div class="w3-col m6 w3-padding-large">
+                    <p>Olen v. 2010 datanomiksi valmistunut freelance-ohjelmoija. Toiselta koulutukseltani olen
+                        graafikko.
+                        Lisäksi olen suorittanut palvelumuotoilun opintoja. Olen erityksen kiinnostunut
+                        Front-End-ohjelmoinnista,
+                        Java-ohjelmoinnista, tietokannoista ja tietokoneiden ja ohjelmien asennuksista. <br />
+                        Tämänhetkisiä osaamisalueitani ovat: Java, Javascript, HTML, CSS, PHP, MySQL, React.js, C#,
+                        Wordpress ja JQuery.
+                    </p>
+                </div>
+            </div>
+            <p class="w3-large w3-center w3-padding-16">Osaamiseni</p>
+            <p class="w3-wide"><i class="fa fa-edit"></i>Web Design</p>
+            <div class="w3-light-grey">
+                <div class="w3-container w3-padding-small w3-dark-grey w3-center w3-hover-black" style="width:90%">90%</div>
+            </div>
+            <p class="w3-wide"><i class="fa fa-image"></i>Graafinen suunnittelu</p>
+            <div class="w3-light-grey">
+                <div class="w3-container w3-padding-small w3-dark-grey w3-hover-black w3-center" style="width:85%">85%</div>
+            </div>
+            <p class="w3-wide"><i class="fa fa-laptop"></i>Web- ohjelmointi</p>
+            <div class="w3-light-grey">
+                <div class="w3-container w3-padding-small w3-dark-grey w3-hover-black w3-center" style="width:75%">75%</div>
+            </div>
+        </div>
+
+        <div class="w3-row w3-center w3-dark-grey w3-hover-black w3-padding-16">
+            <div class="w3-quarter w3-section">
+                <span class="w3-xlarge">20+</span><br />
+                GitHub-Repoa
+            </div>
+            <div class="w3-quarter w3-section">
+                <span class="w3-xlarge">50+</span><br />
+                Projektia valmiina
+            </div>
+            <div class="w3-quarter w3-section">
+                <span class="w3-xlarge">1000+</span><br />
+                Seuraajaa GitHubissa
+            </div>
+            <div class="w3-quarter w3-section">
+                <span class="w3-xlarge">10+</span><br />
+                Julkaistua mobiilisovellusta
+            </div>
+        </div>
+
+
+        <!-- Second Parallax Image with Portfolio Text -->
+        <div class="bgimg-2 w3-display-container w3-opacity-min" id="portfolio">
+            <div class="w3-display-middle">
+                <span class="w3-xxlarge w3-text-white w3-wide w3-black">PROJEKTIT</span>
+            </div>
+        </div>
+
+        <!-- Container (Portfolio Section) -->
+        <div class="w3-content w3-container w3-padding-64">
+            <h2 class="w3-center">PROJEKTIT</h2>
+            <p class="w3-center"><em>Tässä muutama esimerkki tekemistäni sovelluksista. Pääset myös itse kokeilemaan ohjelmointia!<br />
+                    Klikkaa kuvaa siirtyäksesi sovelluksen sivulle.</em>
+            </p><br />
+
+            <!-- Responsive Grid. (Four ->) three columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
+            <div class="w3-row-padding w3-center">
+                <div class="w3-col w3-third">
+                    <a href="robotto.html" title="Robotto-sivu">
+                        <img src="/images/heiluu.png" style="width:100%" class="w3-hover-opacity"
+                            alt="Robotti, jolla kädet ylhäällä"></a>Kokeile robotin ohjelmointia!
+                </div>
+
+                <div class="w3-col w3-third">
+                    <a href="luvut.html" title="Laske luvuilla">
+                        <img src="/images/calculation-1874770_640.jpg" style="width:100%" class="w3-hover-opacity"
+                            alt="Laskin"></a>Laske luvuilla!
+                </div>
+
+                <div class="w3-col w3-third">
+                    <a href="ventti.html" title="Pelaa venttiä">
+                        <img src="/images/cards-3669205_640.png" style="width:100%" class="w3-hover-opacity"
+                            alt="Pelikortti ruutuässä"></a>Pelaa venttiä!
+                </div>
+            </div>
+        </div>
+
+        <!-- Third Parallax Image with Portfolio Text -->
+        <div class="bgimg-3 w3-display-container w3-opacity-min" id="contact">
+            <div class="w3-display-middle">
+                <span class="w3-xxlarge w3-text-white w3-wide">YHTEYS</span>
+            </div>
+        </div>
+
+        <!-- Container (Contact Section) -->
+        <div class="w3-content w3-container w3-padding-64">
+            <h2 class="w3-center">OTA YHTEYTTÄ</h2>
+            <p class="w3-center"><em>Ota rohkeasti yhteyttä! Suunnitellaan yhdessä tarpeitasi vastaava sovellus,
+                    nettisivu tai muu innostava projekti!</em></p>
+            <div class="w3-row w3-padding-32 w3-section">
+                <div class="w3-col m4 w3-container w3-mobile">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1979.690980576529!2d24.849168715677724!3d60.
+                25202978199113!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x468df6531bf62291%3A0xf4b80c767b71c5ba!2sNeulastie+8
+                %2C+00410+Helsinki!5e0!3m2!1sfi!2sfi!4v1555604144062!5m2!1sfi!2sfi" class="w3-image w3-round"
+                        title="yrityksen sijainti GoogleMaps-kartalla" style="width:100%"></iframe>
+                </div>
+                <div class="w3-col m8 w3-panel">
+                    <div class="w3-large w3-margin-bottom">
+                        <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i>Ohjelmoijanpolkutie 0, 00000 Helsinki<br>
+                        <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i>GSM: +358 00 00000<br>
+                        <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i>Email:
+                        <a href="mailto:otto@ohjelmoija.mallimail">otto@ohjelmoija.mallimail</a><br>
+                        <i class="fa fa-git-square fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i>GitHub:
+                        <a href="https://github.com/" target="_blank">Otto_Ohjelmoija</a><br>
+                    </div>
+                    <p>Voit halutessasi lähettää viestin, niin otan sinuun yhteyttä!</p>
+                    <form id="Ylomake" action="/action_page.php" target="_blank">
+                        <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+                            <div class="w3-half">
+                                <label for="Name">Nimi:</label>
+                                <input id="Name" class="w3-input w3-border" type="text" placeholder="Nimi"
+                                    required><br />
+                            </div>
+                            <div class="w3-half">
+                                <label for="Email">E-mail:</label>
+                                <input id="Email" class="w3-input w3-border" type="text" placeholder="Email"
+                                    required><br />
+                            </div>
+                        </div>
+                        <label for="Message">Viestisi:</label>
+                        <input id="Message" class="w3-input w3-border" type="text" placeholder="Viesti" required>
+                        <button class="w3-button w3-black w3-right w3-section" type="submit"
+                            onclick="return ValidateEmail()">
+                            <i class="fa fa-paper-plane"></i>Lähetä viesti</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
+        <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>Sivun alkuun</a>
+        <p><img src="/images/LogoMusta.png" class="w3-round" alt="yrityksen logo" width="10%" height="10%"
+                alt="OTTO-OHJELMOIJA"><br />
+            Otto-Ohjelmoija<br />
+            Ohjelmoijanpolkutie 0, 00000 Helsinki<br />
+            GSM: +358 00 00000<br />
+            Email: otto@ohjelmoija.mallimail<br />
+        </p>
+        <div class="w3-xlarge w3-section">
+            <i class="fa fa-facebook-official w3-hover-opacity"></i>
+            <i class="fa fa-instagram w3-hover-opacity"></i>
+            <i class="fa fa-snapchat w3-hover-opacity"></i>
+            <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+            <i class="fa fa-twitter w3-hover-opacity"></i>
+            <i class="fa fa-linkedin w3-hover-opacity"></i>
+        </div>
+    </footer>
+
+    <script>
+
+        // Change style of navbar on scroll
+        window.onscroll = function () { myFunction() };
+        function myFunction() {
+            var navbar = document.getElementById("myNavbar");
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
+            } else {
+                navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
+            }
+        }
+
+        // Used to toggle the menu on small screens when clicking on the menu button
+        function toggleFunction() {
+            var x = document.getElementById("navDemo");
+            if (x.className.indexOf("w3-show") == -1) {
+                x.className += " w3-show";
+            } else {
+                x.className = x.className.replace(" w3-show", "");
+            }
+        }
+        function ValidateEmail() {
+            if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(Ylomake.Email.value)) {
+                return true;
+            }
+            window.alert("Tarkista sähköpostiosoitteesi!");
+            return false;
+        }
+    </script>
+
+</body>
+
+</html>

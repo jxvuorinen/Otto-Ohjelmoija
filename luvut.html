@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="fi">
+<title>Laskentaa - Otto-Ohjelmoija</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/images/Logo.png" type="image/gif">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: "Lato", sans-serif;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    body,
+    html {
+        height: 100%;
+        color: rgb(89, 89, 89);
+        line-height: 1.8;
+    }
+
+    .w3-wide {
+        letter-spacing: 10px;
+    }
+
+    .w3-hover-opacity {
+        cursor: pointer;
+    }
+
+    .w3-button:focus,
+    .w3-button:hover {
+        color: white;
+        background-color: black;
+        text-decoration: none
+    }
+</style>
+
+<body>
+    <nav>
+        <!-- Navbar (sit on top) -->
+        <div class="w3-top">
+            <div class="w3-bar" id="myNavbar">
+                <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right"
+                    href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+                    <i class="fa fa-bars"></i>
+                </a>
+                <a href="index.html#portfolio" class="w3-bar-item w3-button">TAKAISIN</a>
+            </div>
+
+            <!-- Navbar on small screens -->
+            <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+                <a href="index.html" class="w3-bar-item w3-button" onclick="toggleFunction()">ETUSIVULLE</a>
+                <a href="index.html#about" class="w3-bar-item w3-button" onclick="toggleFunction()">TIETOA</a>
+                <a href="index.html#portfolio" class="w3-bar-item w3-button" onclick="toggleFunction()">PROJEKTIT</a>
+                <a href="index.html#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">YHTEYS</a>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <!-- Container (Laskuesimerkki) -->
+        <div class="w3-content w3-container w3-padding-64 w3-center" id="Luvut">
+            <h1 class="w3-center">LASKE LUVUILLA</h1>
+            <p class="w3-center"><em>Syötä kenttiin kaksi lukua väliltä 1-10 ja klikkaa "Laske". Saat lukujen
+                    peruslaskutoimitukset näkyviin.</em></p>
+            <form name="luvut">
+                <label for="luku1">Luku 1:</label>
+                <input type="number" min="1" max="10" id="luku1">
+                <br />
+                <br />
+                <label for="luku2">Luku 2:</label>
+                <input type="number" min="1" max="10" id="luku2">
+                <br />
+                <br />
+                <input class="w3-button w3-black" type="button" value="Laske" onclick="Laske()">
+                <input class="w3-button w3-black" type="button" value="Tyhjennä" onclick="Tyhja()">
+            </form>
+            <p id="summadiv"></p>
+            <p id="erotusdiv"></p>
+            <p id="tulodiv"></p>
+            <p id="jakodiv"></p>
+            <p id="luvutdiv"></p>
+        </div>
+    </main>
+    <!-- Footer -->
+    <footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
+        <p><img src="/images/LogoMusta.png" class="w3-round" alt="OTTO-OHJELMOIJA" width="10%" height="10%"><br />
+            Otto-Ohjelmoija<br />
+            Ohjelmoijanpolkutie 0, 00000 Helsinki<br />
+            GSM: +358 00 00000<br />
+            Email: otto@ohjelmoija.mallimail<br />
+        </p>
+        <div class="w3-xlarge w3-section">
+            <i class="fa fa-facebook-official w3-hover-opacity"></i>
+            <i class="fa fa-instagram w3-hover-opacity"></i>
+            <i class="fa fa-snapchat w3-hover-opacity"></i>
+            <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+            <i class="fa fa-twitter w3-hover-opacity"></i>
+            <i class="fa fa-linkedin w3-hover-opacity"></i>
+        </div>
+    </footer>
+
+    <script>
+        // Change style of navbar on scroll
+        window.onscroll = function () { myFunction() };
+        function myFunction() {
+            var navbar = document.getElementById("myNavbar");
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
+            } else {
+                navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
+            }
+        }
+
+        // Used to toggle the menu on small screens when clicking on the menu button
+        function toggleFunction() {
+            var x = document.getElementById("navDemo");
+            if (x.className.indexOf("w3-show") == -1) {
+                x.className += " w3-show";
+            } else {
+                x.className = x.className.replace(" w3-show", "");
+            }
+        }
+
+        function Laske() {
+            var luku1 = Number(document.forms["luvut"]["luku1"].value);
+            var luku2 = Number(document.forms["luvut"]["luku2"].value);
+
+            if (luku1 <= 0 || luku1 > 10 || luku2 <= 0 || luku2 > 10) {
+                window.alert("Lukujen tulee olla välillä 1 - 10");
+                return;
+            }
+
+            var summa = luku1 + luku2;
+            document.getElementById("summadiv").innerHTML = "Summa on " + summa;
+            var erotus = luku1 - luku2;
+            document.getElementById("erotusdiv").innerHTML = "Erotus on " + erotus;
+            var tulo = luku1 * luku2;
+            document.getElementById("tulodiv").innerHTML = "Tulo on " + tulo;
+            var jako = luku1 / luku2;
+            document.getElementById("jakodiv").innerHTML = "Jakolaskun tulos on " + jako;
+
+            var text = ""; var aloitusLuku = 0; var lopetusLuku = 0;
+            if (luku1 < luku2) {
+                aloitusLuku = luku1;
+                lopetusLuku = luku2;
+            } else {
+                aloitusLuku = luku2;
+                lopetusLuku = luku1;
+            }
+            for (aloitusLuku; aloitusLuku <= lopetusLuku; aloitusLuku++) {
+                text += aloitusLuku + " ";
+            }
+            document.getElementById("luvutdiv").innerHTML = "Luvut: " + text;
+        }
+
+        function Tyhja() {
+            document.getElementById("summadiv").innerHTML = "";
+            document.getElementById("erotusdiv").innerHTML = "";
+            document.getElementById("tulodiv").innerHTML = "";
+            document.getElementById("jakodiv").innerHTML = "";
+            document.getElementById("luvutdiv").innerHTML = "";
+            document.forms["luvut"]["luku1"].value = "";
+            document.forms["luvut"]["luku2"].value = "";
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,276 @@
+html {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #016D29;
+    overflow-x: hidden;
+}
+h1 {
+    font-size: 24px;
+}
+
+.hand {
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    padding: 15px;
+}
+/* For IE 6/7 (trigger hasLayout) */
+.hand {
+    zoom:1;
+}
+
+.spread {
+    width: 350px;
+    height: 250px;
+    position: relative;
+}
+
+.card {
+    position: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 80px;
+    height: 120px;
+    border-radius: 15px;
+    background-color: white;
+    padding: 15px;
+    margin: 18px;
+    text-align: center;
+    -webkit-box-shadow: 3px 3px 7px rgba(0,0,0,0.3);
+    box-shadow: 3px 3px 7px rgba(0,0,0,0.3);
+
+}
+#j1 {
+    background-image: url("card.png");
+    background-size: cover;
+}
+
+.spread > .card {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+.spread #p1 {
+    -webkit-transform: rotate(-20deg);
+    -moz-transform: rotate(-20deg);
+    -o-transform: rotate(-20eg);
+    -ms-transform: rotate(-20deg);
+    transform: rotate(-20deg);
+
+}
+.spread #p2 {
+    left: 30px;
+    top: 0px;
+    -webkit-transform: rotate(-10deg);
+    -moz-transform: rotate(-10deg);
+    -o-transform: rotate(-10deg);
+    -ms-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+    
+}
+
+.spread #p3 {
+    left: 60px;
+    top: 5px;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+    visibility: hidden;
+}
+
+.spread #p4 {
+    left: 90px;
+    top: 10px;
+    -webkit-transform: rotate(10deg);
+    -moz-transform: rotate(10deg);
+    -o-transform: rotate(10deg);
+    -ms-transform: rotate(10deg);
+    transform: rotate(10deg);
+    visibility: hidden;
+}
+
+.spread #p5 {
+    left: 120px;
+    top: 15px;
+    -webkit-transform: rotate(20deg);
+    -moz-transform: rotate(20deg);
+    -o-transform: rotate(20deg);
+    -ms-transform: rotate(20deg);
+    transform: rotate(20deg);
+    visibility: hidden;
+}
+
+.card .value-top {
+    text-align: left;
+    font-size: 16pt;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.card .suit {
+    text-align: center;
+    font-size: 39pt;
+    position: absolute;
+    top: 40px;
+    left: 40px;
+}
+
+.card .spades, .card .clubs {
+    color: black;
+
+}
+
+.card .hearts, .card .diamonds {
+    color: red;
+}
+
+.card .suit-spades-top {
+    text-align: left;
+    font-size: 16pt;
+    color: black;
+    position: absolute;
+    left: 14px;
+    top: 30px;
+}
+
+.card .suit-hearts-top {
+    text-align: left;
+    font-size: 16pt;
+    color: red;
+    position: absolute;
+    left: 14px;
+    top: 30px;
+}
+
+.card .value-spades-bottom {
+    font-size: 16pt;
+    transform: rotate(180deg);
+    position: absolute;
+    color: black;
+    text-align: left;
+    right: 14px;
+    bottom: 30px;
+}
+
+.card .value-hearts-bottom {
+    font-size: 16pt;
+    transform: rotate(180deg);
+    position: absolute;
+    color: red;
+    text-align: left;
+    right: 14px;
+    bottom: 30px;
+}
+
+
+.card .value-bottom {
+    font-size: 16pt;
+	text-align: left;
+    transform: rotate(180deg);
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+
+
+}
+
+#controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+button {
+    width: 150px;
+    height: 50px;
+    background-color: #F3C620;
+    border-color: gray;
+    font-size: 16pt;
+}
+
+#overlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+#gameover {
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 40%;
+    height: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: blue;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.spread #j1 {
+    -webkit-transform: rotate(-20deg);
+    -moz-transform: rotate(-20deg);
+    -o-transform: rotate(-20eg);
+    -ms-transform: rotate(-20deg);
+    transform: rotate(-20deg);
+
+}
+.spread #j2 {
+    left: 30px;
+    top: 0px;
+    -webkit-transform: rotate(-10deg);
+    -moz-transform: rotate(-10deg);
+    -o-transform: rotate(-10deg);
+    -ms-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+    visibility: hidden;
+}
+
+.spread #j3 {
+    left: 60px;
+    top: 5px;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+    visibility: hidden;
+}
+
+.spread #j4 {
+    left: 90px;
+    top: 10px;
+    -webkit-transform: rotate(10deg);
+    -moz-transform: rotate(10deg);
+    -o-transform: rotate(10deg);
+    -ms-transform: rotate(10deg);
+    transform: rotate(10deg);
+    visibility: hidden;
+}
+
+.spread #j5 {
+    left: 120px;
+    top: 15px;
+    -webkit-transform: rotate(20deg);
+    -moz-transform: rotate(20deg);
+    -o-transform: rotate(20deg);
+    -ms-transform: rotate(20deg);
+    transform: rotate(20deg);
+    visibility: hidden;
+}
