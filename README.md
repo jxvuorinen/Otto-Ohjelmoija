@@ -1,7 +1,7 @@
 # Otto-Ohjelmoija -website
 - Frontend-related excercise to learn HTML, CSS and JavaScript: a website-proto for an imaginary company
 - Photos from Pixabay
-- Preview page here:
+- Preview page here: https://jxvuorinen.github.io/Otto-Ohjelmoija/
 ## Notes:
 - Laske luvuilla: you can perform basic calculations with numbers 1-9.
 - Robotto: Make the robot wave by typing "robotto.wave();" on the field
