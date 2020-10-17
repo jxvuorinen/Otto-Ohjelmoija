@@ -3,7 +3,7 @@
 <title>Robotto - Otto-Ohjelmoija</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" href="/images/Logo.png" type="image/gif">
+<link rel="icon" href="./images/Logo.png" type="image/gif">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -82,7 +82,7 @@
 
             <div class="w3-row w3-padding-32 w3-section">
                 <p id="animaatio" class="w3-col m4 w3-container">
-                    <img id="perus" src="/images/perus.png" style="width:100%" alt="robotin kädet alhaalla"></p>
+                    <img id="perus" src="./images/perus.png" style="width:100%" alt="robotin kädet alhaalla"></p>
                 <div class="w3-col m8 w3-panel">
                     <div class="w3-large w3-margin-bottom">
                         <form name="komentorivi" id="komentoform">
@@ -108,7 +108,7 @@
 
     <!-- Footer -->
     <footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
-        <p><img src="/images/LogoMusta.png" class="w3-round" width="10%" height="10%" alt="OTTO-OHJELMOIJA"><br />
+        <p><img src="./images/LogoMusta.png" class="w3-round" width="10%" height="10%" alt="OTTO-OHJELMOIJA"><br />
             Otto-Ohjelmoija<br />
             Ohjelmoijanpolkutie 0, 00000 Helsinki<br />
             GSM: +358 00 00000<br />
@@ -152,8 +152,8 @@
             var komento = document.forms["komentorivi"]["Komento"].value;
             if (komento == "robotto.wave();") {
                 document.getElementById("teksti").innerHTML = "Oikein!";
-                document.getElementById("animaatio").innerHTML = "<img class='robo' src='/images/perus.png' width='100%' alt='robotin kädet alhaalla'>"
-                    + "<img class='robo' src='/images/heiluu.png' width='100%' alt='robotin kädet ylhäällä'>";
+                document.getElementById("animaatio").innerHTML = "<img class='robo' src='./images/perus.png' width='100%' alt='robotin kädet alhaalla'>"
+                    + "<img class='robo' src='./images/heiluu.png' width='100%' alt='robotin kädet ylhäällä'>";
                 w3.slideshow(".robo", 1000);
 
             } else {
@@ -164,7 +164,7 @@
         //tyhjennä-painike
         function tyhjenna() {
             document.getElementById("komentoform").reset();
-            document.getElementById("animaatio").innerHTML = "<img class='robo' src='/images/perus.png' width='100%' alt='robotin kädet alhaalla'>"
+            document.getElementById("animaatio").innerHTML = "<img class='robo' src='./images/perus.png' width='100%' alt='robotin kädet alhaalla'>"
             document.getElementById("teksti").innerHTML = "Yritä uudestaan!"
         }
 
